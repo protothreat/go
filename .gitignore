@@ -1,0 +1,23 @@
+# Binaries and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary from `go test -c`
+*.test
+
+# Profiling and coverage
+*.out
+*.prof
+*.cover
+coverage.*
+*.coverprofile
+
+# Local module/workspace overrides
+go.work
+go.work.sum
+
+# Uncomment if you use a local vendor tree and do not commit it.
+# vendor/

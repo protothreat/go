@@ -1,0 +1,15 @@
+name: go-test
+description: Run go test for the Go binding (go.mod directory).
+inputs:
+  working_directory:
+    description: Directory containing go.mod
+    required: true
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-go@v5
+      with:
+        go-version: "1.22.x"
+    - run: go test ./...
+      shell: bash
+      working-directory: ${{ inputs.working_directory }}
