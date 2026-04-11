@@ -9,7 +9,7 @@
 //   - wire: stable kernel command name maps
 //   - pb: generated protobuf types (threat.proto)
 //   - utils: encoding, wire decode, URI and IP index parsing, HTTP posts
-//   - commit, blockchain: commit drafts, bootstrap, permissions, storage paths
+//   - commit, blockchain: commit drafts, bootstrap, permissions
 //
 // Module path: github.com/protothreat/go (see https://github.com/protothreat/go).
 // Version aligns with tagged protothreat binding releases for this module.

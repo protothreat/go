@@ -19,7 +19,7 @@ type TlsConfig struct {
 
 // ParsedUri holds normalized connection fields.
 type ParsedUri struct {
-	Type           string // "http", "raw", "ws", "unix"
+	Type           string // "http", "ws", "unix" (http covers http(s) and pt(s) shorthands)
 	Host           string
 	Port           int
 	Path           string
@@ -102,7 +102,7 @@ func ParseProtothreatURI(rawURI string) (*ParsedUri, error) {
 			port, _ = strconv.Atoi(p)
 		}
 		return &ParsedUri{
-			Type:           "raw",
+			Type:           "http",
 			Host:           u.Hostname(),
 			Port:           port,
 			Path:           "",
