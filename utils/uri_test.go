@@ -25,19 +25,19 @@ func TestParseHTTPSChallengePlain(t *testing.T) {
 	}
 }
 
-func TestParsePTSchemeIsHTTP(t *testing.T) {
-	u, err := ParseProtothreatURI("pt://127.0.0.1:9001")
+func TestParsePtSchemeIsHTTPType(t *testing.T) {
+	u, err := ParseProtothreatURI("pt://127.0.0.1:9000")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if u.Type != "http" || u.Host != "127.0.0.1" || u.Port != 9001 || u.TLS.Enabled {
+	if u.Type != "http" || u.Host != "127.0.0.1" || u.Port != 9000 || u.TLS.Enabled {
 		t.Fatalf("unexpected: %+v", u)
 	}
-	u2, err := ParseProtothreatURI("pts://127.0.0.1/")
+	u2, err := ParseProtothreatURI("pts://example.com")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if u2.Type != "http" || !u2.TLS.Enabled || u2.Port != 9000 {
+	if u2.Type != "http" || u2.Host != "example.com" || u2.Port != 9000 || !u2.TLS.Enabled {
 		t.Fatalf("unexpected: %+v", u2)
 	}
 }

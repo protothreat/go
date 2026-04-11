@@ -19,7 +19,7 @@ type TlsConfig struct {
 
 // ParsedUri holds normalized connection fields.
 type ParsedUri struct {
-	Type           string // "http", "ws", "unix" (http covers http(s) and pt(s) shorthands)
+	Type           string // "http" (incl. pt:// / pts://), "ws", "unix"
 	Host           string
 	Port           int
 	Path           string
